@@ -58,7 +58,7 @@
             pokemon.forEach((poke, i) =>
             {
                 d.write(
-                    '<a href="#" onclick="selection(' + i + ');">' +
+                    '<a href="#pokedex" onclick="selection(' + i + ');">' +
                     '<article><div class="background"><div class="pokemon-info"><h2>' + poke[1] + '</h2></div>' +
                     '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png" alt></div>' +
                     '<div class="pokemon-vie">' + poke[3] + ' pv</div>' +
