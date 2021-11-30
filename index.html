@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,32 +19,46 @@
     </header>
 
 
+
     <h1>Pokédex</h1>
 
 
-    <div id="grille">
+    <div id="deck">
 
-        <a href="#">
-            <div class="pokemon">
-                <div class="pokemon-nom">Bulbizarre</div>
-                <div class="pokemon-image">
-                    <img src="bulbizarre.png">
-                </div>
-                <div class="pokemon-description"></div>
-            </div>
-        </a>
+    <script>
+        let d = document;
+
+        let pokemon = [
+            ['Bulbizarre', 'Plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
+            ['Herbizarre', 'Plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
+            ['Florizarre', 'Plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
+            ['Salameche', 'Feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
+            ['Reptincel', 'Feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
+            ['Dracaufeu', 'Feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
+            ['Carrapuce', 'Eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
+            ['Carabaffe', 'Eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
+            ['Tortank', 'Eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
+            ['Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
+            ['Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
+            ['Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
+            ['Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
+            ['Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
+            ['Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
+        ];
 
 
+        pokemon.forEach((poke, i) =>
+        {
+            d.write(
+                '<a href="#"><article><div class="background"><div class="pokemon-info"><h2>' + poke[0] + '</h2></div>' +
+                '<div class="pokemon-image"><img src="' + (i+1) + poke[0].toLowerCase() + '.png"></div>' +
+                '<div class="pokemon-vie">' + poke[2] + ' pv</div>' +
+                '<div class="pokemon-description">' + poke[3] + '</div>' +
+                '</div></article></a>'
+            );
+        });
+    </script>
 
-        <div class="pokemon">
-            Herbizarre
-        </div>
-        <div class="pokemon">
-            Florizarre
-        </div>
-        <div class="pokemon">
-            Salamèche
-        </div>
     </div>
 </body>
 </html>

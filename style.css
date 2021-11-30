@@ -1,3 +1,4 @@
+
 * {
     font-family:arial;
     text-align:center;
@@ -25,43 +26,76 @@ a {
 }
 
 
-#grille {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 50px;
+#deck {
+    margin-top: 300px;
+    display:flex;
+    justify-content: center;
+
 }
 
+#deck a {
+    width: 80px;
+    transition: margin-top 1s;
+}
+#deck a:hover {
+    z-index:1;
+    margin-top: -200px;
+}
 
-.pokemon {
-    background-color: #59c527;
-    border: 8px solid #ffcb05;
+article {
+
+border: 8px solid #ffcb05;
+border-image: linear-gradient(105deg, rgba(255,192,0,1) 0%, rgba(255,255,255,0.7455357142857143) 100%, rgba(255,184,0,0.9836309523809523) 100%) ;
+border-image-slice:1;
+width: 220px;
     border-radius: 15px;
-    width: 220px;
-    padding: 10px;
-    margin: auto;
-}
 
+    margin: auto;
+    
+    
+}
+.background{
+background-color: #59c527;
+    padding-bottom:20px;
+    min-height:300px;
+}
 .pokemon-image {
     margin:5px 10px;
     margin-top:2px;
     border: 4px solid rgb(255, 253, 108);
 }
-.pokemon img {
+article img {
     width: 100%;
     display:block;
 }
 
-.pokemon-nom {
+h2 {
     color:black;
     font-weight: bold;
     text-align: left;
-    margin-left: 10px;
     margin-top: 2px;
+    margin:0;
+}
+
+.pokemon-info {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+.pokemon-vie {
+    color:rgb(223, 0, 0);
+    font-weight: bold;
+    font-size: 28px;
 }
 
 .pokemon-description {
-    
+    color: black;
+    font-size: 16px;
+    margin-top:5px;
+    text-align:left;
 }
+
 
 
 
