@@ -21,29 +21,33 @@
     <h1>Pokédex</h1>
 
 
-
+    <!-- POKÉDEX -->
     <div id="pokedex">
         <div class="pokedex-image">
             <img src="" id="pokedex-image-img" alt>
         </div>
+
+        <h2 id="pokedex-nom"></h2>
+        <p id="pokedex-description"></p>
     </div>
 
 
 
     <div id="deck">
         <script>
-            let d = document;
-
+            let d = document; // abréviation pour raccourcir la variable document
+            
+            // Données
             let pokemon = [
-                [1, 'Bulbizarre', 'Plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
-                [2, 'Herbizarre', 'Plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
-                [3, 'Florizarre', 'Plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
-                [4, 'Salameche', 'Feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
-                [5, 'Reptincel', 'Feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
-                [6, 'Dracaufeu', 'Feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
-                [7, 'Carrapuce', 'Eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
-                [8, 'Carabaffe', 'Eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
-                [9, 'Tortank', 'Eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
+                [1, 'Bulbizarre', 'plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
+                [2, 'Herbizarre', 'plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
+                [3, 'Florizarre', 'plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
+                [4, 'Salameche', 'feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
+                [5, 'Reptincel', 'feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
+                [6, 'Dracaufeu', 'feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
+                [7, 'Carapuce', 'eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
+                [8, 'Carabaffe', 'eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
+                [9, 'Tortank', 'eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
                 [10, 'Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
                 [11, 'Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
                 [12, 'Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
@@ -54,26 +58,27 @@
 
 
             
-
+            // TOUTES LES CARTES
             pokemon.forEach((poke, i) =>
             {
                 d.write(
                     '<a href="#pokedex" onclick="selection(' + i + ');">' +
-                    '<article><div class="background"><div class="pokemon-info"><h2>' + poke[1] + '</h2></div>' +
+                    '<article><div class="background background-' + poke[2] + '"><div class="pokemon-info"><h2>' + poke[1] + '</h2>' +
+                    '<div class="pokemon-vie">' + poke[3] + ' pv</div></div>' +
                     '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png" alt></div>' +
-                    '<div class="pokemon-vie">' + poke[3] + ' pv</div>' +
                     '<div class="pokemon-description">' + poke[4] + '</div>' +
                     '</div></article></a>'
                 );
             });
 
 
+            // CLIQUER SUR UNE CARTE
             function selection(i) {
-                document.getElementById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+                d.getElementById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+                d.getElementById('pokedex-nom').innerText = pokemon[i][1];
+                d.getElementById('pokedex-description').innerText = pokemon[i][4];
             }
 
-
-            
         </script>
     </div>
 </body>

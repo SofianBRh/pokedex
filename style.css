@@ -51,13 +51,19 @@ article {
 .background {
     min-height: 300px;
     background-color: #59c527;
-    padding: 10px;
-    padding-bottom: 20px;
+    padding: 10px 15px;
+    padding-bottom: 10px;
     border-radius: 8px;
+}
+.background-feu {
+    background-color: #f76d6d;
+}
+.background-eau {
+    background-color: #567ccf;
 }
 
 .pokemon-image {
-    margin:5px 10px;
+    margin:5px 5px;
     margin-top:2px;
     border: 4px solid rgb(255, 253, 108);
 }
@@ -68,6 +74,7 @@ article img {
 
 h2 {
     color:black;
+    font-size:18px;
     font-weight: bold;
     text-align: left;
     margin-top: 2px;
@@ -83,13 +90,13 @@ h2 {
 .pokemon-vie {
     color:rgb(223, 0, 0);
     font-weight: bold;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .pokemon-description {
     color: black;
     font-size: 16px;
-    margin-top:5px;
+    margin-top:15px;
     text-align:left;
 }
 
@@ -103,12 +110,28 @@ h2 {
     margin:auto;
     border-radius:20px;
     padding:20px;
+    color:white;
+    box-shadow:0 0 15px rgba(0, 0, 0, .2);
 }
 #pokedex .pokedex-image {
-    min-height:150px;
-    width:100%;
+    min-height:125px;
     background-color: rgb(131, 131, 131);
+    padding:5px;
+    box-shadow:0 0 10px rgba(0, 0, 0, .2) inset;
 }
 .pokedex-image img {
     width:100%;
+    display:block;
+}
+
+#pokedex h2 {
+    color:white;
+    font-size:24px;
+    margin-top:5px;
+}
+
+#pokedex p {
+    text-align:left;
+    font-size:18px;
+    margin-bottom:0;
 }
