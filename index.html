@@ -24,7 +24,7 @@
 
     <div id="pokedex">
         <div class="pokedex-image">
-            <img src="1bulbizarre.png" id="pokedex-image-img" alt/>
+            <img src="" id="pokedex-image-img" alt>
         </div>
     </div>
 
@@ -53,11 +53,14 @@
             ];
 
 
+            
+
             pokemon.forEach((poke, i) =>
             {
                 d.write(
-                    '<a href="#" onclick="selection(' + i +');"><article><div class="background"><div class="pokemon-info"><h2>' + poke[1] + '</h2></div>' +
-                    '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png"></div>' +
+                    '<a href="#" onclick="selection(' + i + ');">' +
+                    '<article><div class="background"><div class="pokemon-info"><h2>' + poke[1] + '</h2></div>' +
+                    '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png" alt></div>' +
                     '<div class="pokemon-vie">' + poke[3] + ' pv</div>' +
                     '<div class="pokemon-description">' + poke[4] + '</div>' +
                     '</div></article></a>'
@@ -65,10 +68,12 @@
             });
 
 
-
             function selection(i) {
-                document.getElementsById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
-            };
+                document.getElementById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+            }
+
+
+            
         </script>
     </div>
 </body>
