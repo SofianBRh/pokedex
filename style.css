@@ -27,7 +27,7 @@ a {
 
 
 #deck {
-    margin-top: 300px;
+    margin-top: 10px;
     display:flex;
     justify-content: center;
 
@@ -38,27 +38,24 @@ a {
     transition: margin-top 1s;
 }
 #deck a:hover {
-    z-index:1;
     margin-top: -200px;
 }
 
 article {
-
-border: 8px solid #ffcb05;
-border-image: linear-gradient(105deg, rgba(255,192,0,1) 0%, rgba(255,255,255,0.7455357142857143) 100%, rgba(255,184,0,0.9836309523809523) 100%) ;
-border-image-slice:1;
-width: 220px;
+    width: 220px;
+    background-image: linear-gradient(105deg, rgba(255,192,0,1) 0%, rgba(255,255,255,0.7455357142857143) 100%, rgba(255,184,0,0.9836309523809523) 100%);
+    border:8px solid transparent;
+    background-origin: border-box;
     border-radius: 15px;
+}
+.background {
+    min-height: 300px;
+    background-color: #59c527;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+}
 
-    margin: auto;
-    
-    
-}
-.background{
-background-color: #59c527;
-    padding-bottom:20px;
-    min-height:300px;
-}
 .pokemon-image {
     margin:5px 10px;
     margin-top:2px;
@@ -66,7 +63,7 @@ background-color: #59c527;
 }
 article img {
     width: 100%;
-    display:block;
+    display: block;
 }
 
 h2 {
@@ -99,12 +96,19 @@ h2 {
 
 
 
-
-
-
-
-
-
 #pokedex {
-    display:none;
+    width:220px;
+    background-color: rgb(212, 18, 18);
+    min-height:300px;
+    margin:auto;
+    border-radius:20px;
+    padding:20px;
+}
+#pokedex .pokedex-image {
+    min-height:150px;
+    width:100%;
+    background-color: rgb(131, 131, 131);
+}
+.pokedex-image img {
+    width:100%;
 }

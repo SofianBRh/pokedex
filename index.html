@@ -18,47 +18,58 @@
         </nav>
     </header>
 
-
-
     <h1>Pokédex</h1>
 
 
+
+    <div id="pokedex">
+        <div class="pokedex-image">
+            <img src="1bulbizarre.png" id="pokedex-image-img" alt/>
+        </div>
+    </div>
+
+
+
     <div id="deck">
+        <script>
+            let d = document;
 
-    <script>
-        let d = document;
-
-        let pokemon = [
-            ['Bulbizarre', 'Plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
-            ['Herbizarre', 'Plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
-            ['Florizarre', 'Plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
-            ['Salameche', 'Feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
-            ['Reptincel', 'Feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
-            ['Dracaufeu', 'Feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
-            ['Carrapuce', 'Eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
-            ['Carabaffe', 'Eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
-            ['Tortank', 'Eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
-            ['Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
-            ['Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
-            ['Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
-            ['Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
-            ['Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
-            ['Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
-        ];
+            let pokemon = [
+                [1, 'Bulbizarre', 'Plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
+                [2, 'Herbizarre', 'Plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
+                [3, 'Florizarre', 'Plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
+                [4, 'Salameche', 'Feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
+                [5, 'Reptincel', 'Feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
+                [6, 'Dracaufeu', 'Feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
+                [7, 'Carrapuce', 'Eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
+                [8, 'Carabaffe', 'Eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
+                [9, 'Tortank', 'Eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
+                [10, 'Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
+                [11, 'Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
+                [12, 'Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
+                [13, 'Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
+                [14, 'Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
+                [15, 'Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
+            ];
 
 
-        pokemon.forEach((poke, i) =>
-        {
-            d.write(
-                '<a href="#"><article><div class="background"><div class="pokemon-info"><h2>' + poke[0] + '</h2></div>' +
-                '<div class="pokemon-image"><img src="' + (i+1) + poke[0].toLowerCase() + '.png"></div>' +
-                '<div class="pokemon-vie">' + poke[2] + ' pv</div>' +
-                '<div class="pokemon-description">' + poke[3] + '</div>' +
-                '</div></article></a>'
-            );
-        });
-    </script>
+            pokemon.forEach((poke, i) =>
+            {
+                d.write(
+                    '<a href="#" onclick="selection(' + i +');"><article><div class="background"><div class="pokemon-info"><h2>' + poke[1] + '</h2></div>' +
+                    '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png"></div>' +
+                    '<div class="pokemon-vie">' + poke[3] + ' pv</div>' +
+                    '<div class="pokemon-description">' + poke[4] + '</div>' +
+                    '</div></article></a>'
+                );
+            });
 
+
+
+            function selection(i) {
+                document.getElementsById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+            };
+        </script>
     </div>
 </body>
 </html>
