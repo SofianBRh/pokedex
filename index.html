@@ -11,74 +11,101 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
 
+
+
 <body>
-    <header>
-        <a class="logo" href="#"></a>
-        <nav>
-        </nav>
 
-        <h1>Pokédex</h1>
-    </header>
+<header>
+    <a class="logo" href="#"></a>
 
-    <!-- POKÉDEX -->
-    <div id="pokedex">
-        <div class="pokedex-image">
-            <img src="" id="pokedex-image-img" alt>
-        </div>
+    <h1>Pokédex</h1>
+</header>
 
-        <h2 id="pokedex-nom"></h2>
-        <p id="pokedex-description"></p>
+
+<!-- POKÉDEX -->
+<div id="pokedex">
+    <div class="pokedex-image">
+        <img src="" id="pokedex-image-img" alt>
     </div>
 
+    <h2 id="pokedex-nom"></h2>
+    <p id="pokedex-description"></p>
+</div>
 
 
-    <div id="deck">
-        <script>
-            let d = document; // abréviation pour raccourcir la variable document
+
+<div id="deck">
+    <script>
+        // *** JAVASCRIPT ***
+        let d = document; // simple abréviation pour raccourcir la variable document
+        
+        // Tableau pokemon avec les données
+        let pokemon = [
+            [1, 'Bulbizarre', 'plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
+            [2, 'Herbizarre', 'plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
+            [3, 'Florizarre', 'plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
+            [4, 'Salameche', 'feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
+            [5, 'Reptincel', 'feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
+            [6, 'Dracaufeu', 'feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
+            [7, 'Carapuce', 'eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
+            [8, 'Carabaffe', 'eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
+            [9, 'Tortank', 'eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
+            [10, 'Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
+            [11, 'Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
+            [12, 'Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
+            [13, 'Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
+            [14, 'Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
+            [15, 'Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
+        ];
+
+
+        
+        // BOUCLE forEach POUR PARCOURIR LE TABLEAU "pokemon" et afficher toutes les cartes
+        pokemon.forEach((poke, i) =>
+        {
+            d.write(
+            // LE CLIQUE DÉCLENCHE LA FONCTION onclick="selection(i)"
+            // avec le numéro du tableau en variable i.
+            // Exemple: selection(0) affiche le pokémon 1, selection(7) affiche pokémon 8...
+            '<a href="#pokedex" onclick="selection(' + i + ')">' + 
             
-            // Données
-            let pokemon = [
-                [1, 'Bulbizarre', 'plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
-                [2, 'Herbizarre', 'plante', 80, "Son bulbe dorsal est devenu si gros qu il ne peut plus se tenir sur ses pattes postérieures"],
-                [3, 'Florizarre', 'plante', 120, "Une douce senteur émane de sa plante. Cette fragrance calme tous ceux qui sont engagés dans un combat."],
-                [4, 'Salameche', 'feu', 40, "Il préfère ce qui est chaud. En cas de pluie, de la vapeur se forme autour de sa queue."],
-                [5, 'Reptincel', 'feu', 80, "Il est très brutal. En combat, il se sert de ses griffes acérées et de sa queue enflammée pour mettre en pièces ses adversaires."],
-                [6, 'Dracaufeu', 'feu', 120, "Son souffle brûlant peut faire fondre la roche. Il est parfois la cause d'incendies de forêt."],
-                [7, 'Carapuce', 'eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
-                [8, 'Carabaffe', 'eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
-                [9, 'Tortank', 'eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
-                [10, 'Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
-                [11, 'Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
-                [12, 'Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
-                [13, 'Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
-                [14, 'Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
-                [15, 'Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
-            ];
-
-
+            '<article><div class="background background-' + poke[2] + '">' + // Couleur de la carte selon le type
             
-            // TOUTES LES CARTES
-            pokemon.forEach((poke, i) =>
-            {
-                d.write(
-                    '<a href="#pokedex" onclick="selection(' + i + ');">' +
-                    '<article><div class="background background-' + poke[2] + '"><div class="pokemon-info"><h2>' + poke[1] + '</h2>' +
-                    '<div class="pokemon-vie">' + poke[3] + ' pv</div></div>' +
-                    '<div class="pokemon-image"><img src="' + poke[0] + poke[1].toLowerCase() + '.png" alt></div>' +
-                    '<div class="pokemon-description">' + poke[4] + '</div>' +
-                    '</div></article></a>'
-                );
-            });
+            '<div class="pokemon-info"><h2>' + poke[1] + '</h2>' + // Nom
+            '<div class="pokemon-vie">' + poke[3] + ' pv</div></div>' + // Vie
+
+            // Image
+            '<div class="pokemon-image"><img src="' + imagePng(i) + '" alt></div>' +
+            
+            // Description
+            '<div class="pokemon-description">' + poke[4] + '</div>' + 
+            
+            '</div></article></a>'
+            );
+        });
 
 
-            // CLIQUER SUR UNE CARTE
-            function selection(i) {
-                d.getElementById("pokedex-image-img").src = pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
-                d.getElementById('pokedex-nom').innerText = pokemon[i][1];
-                d.getElementById('pokedex-description').innerText = pokemon[i][4];
-            }
 
-        </script>
-    </div>
+        // FONCTION LORSQU'ON CLIQUE SUR UNE CARTE
+        function selection(i)
+        {
+            d.getElementById("pokedex-image-img").src = imagePng(i);
+            d.getElementById('pokedex-nom').innerText = pokemon[i][1];
+            d.getElementById('pokedex-description').innerText = pokemon[i][4];
+        }
+
+
+
+
+        // Fonction pour écrire le nom du fichier image d'un pokémon
+        // Numéro + Nom + .png
+        function imagePng(i)
+        {
+            return pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+        }
+    </script>
+</div>
+
+
 </body>
 </html>
