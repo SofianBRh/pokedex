@@ -22,6 +22,7 @@
 </header>
 
 
+
 <!-- POKÉDEX -->
 <div id="pokedex">
     <div class="pokedex-image">
@@ -46,6 +47,9 @@
         // *** JAVASCRIPT ***
         let d = document; // simple abréviation pour raccourcir la variable document
         
+
+
+
         // Tableau pokemon avec les données
         let pokemon = [
             [1, 'Bulbizarre', 'plante', 40, "Quand il est jeune, il absorbe les nutriments conservés dans son dos pour grandir et se développer."],
@@ -74,20 +78,25 @@
             // CLIQUER DÉCLENCHE LA FONCTION onclick="selection(i)"
             // avec la variable i qui correspond à la ligne du tableau
             // Exemple: selection(0) affiche le pokémon 1, selection(7) affiche pokémon 8...
-            '<a href="#pokedex" onclick="selection(' + i + ')">' + 
-            
-            '<article><div class="background background-' + poke[2] + '">' + // Couleur de la carte selon le type
-            
-            '<div class="pokemon-info"><h2>' + poke[1] + '</h2>' + // Nom
-            '<div class="pokemon-vie">' + poke[3] + ' pv</div></div>' + // Vie
+            `
+            <a href="#pokedex" onmouseover="selection(${ i })">
+                <article>
+                    <div class="background background-${ poke[2] }"> <!-- Couleur de la carte selon le type -->
+                    
+                    <div class="pokemon-info">
+                        <h2>${ poke[1] }</h2> <!-- Nom -->
+                        <div class="pokemon-vie">${ poke[3] } pv</div> <!-- Vie -->
+                    </div>
 
-            // Image
-            '<div class="pokemon-image"><img src="' + imagePng(i) + '" alt></div>' +
+                    <div class="pokemon-image"><img src="${ imagePng(i) }" alt></div> <!-- Image -->
+                    
+                    <div class="pokemon-description">${ poke[4] }</div> <!-- Description -->
+                    
+                    </div>
+                </article>
+            </a>
+            `
             
-            // Description
-            '<div class="pokemon-description">' + poke[4] + '</div>' + 
-            
-            '</div></article></a>'
             );
         });
 
@@ -106,6 +115,8 @@
 
 
 
+
+
         // Fonction pour écrire le nom du fichier image d'un pokémon
         // Numéro + Nom + .png
         function imagePng(i)
@@ -116,8 +127,7 @@
 
         function txtMajPremier(txt)
         {
-            txt = txt[0].toUpperCase() + txt.slice(1);
-            return txt;
+            return txt[0].toUpperCase() + txt.slice(1);
         }
     </script>
 </div>
@@ -125,3 +135,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+

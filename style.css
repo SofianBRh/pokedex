@@ -35,14 +35,16 @@ a {
 
 
 #deck {
-    margin-top: 10px;
     display:flex;
     justify-content: center;
-
+    flex-wrap:wrap;
+    max-width: 100%;
+    margin: 15px 160px;
+    margin-left:0;
 }
 
 #deck a {
-    width: 80px;
+    width: 50px;
     transition: margin-top 1s;
 }
 #deck a:hover {
@@ -59,7 +61,7 @@ article {
 .background {
     min-height: 300px;
     background-color: #59c527;
-    padding: 10px 15px;
+    padding: 10px 10px;
     padding-bottom: 10px;
     border-radius: 8px;
 }
@@ -93,7 +95,7 @@ h2 {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .pokemon-vie {
     color:rgb(223, 0, 0);
@@ -104,15 +106,16 @@ h2 {
 .pokemon-description {
     color: black;
     font-size: 16px;
-    margin-top:15px;
     text-align:left;
+    margin:0 5px;
+    margin-top:15px;
 }
 
 
 
 
 #pokedex {
-    width:220px;
+    width:240px;
     background-color: rgb(212, 18, 18);
     min-height:300px;
     margin:auto;
@@ -120,7 +123,7 @@ h2 {
     padding:20px;
     padding-bottom:10px;
     color:white;
-    border:8px solid rgb(192, 23, 23);
+    border:8px solid rgb(172, 17, 17);
     box-shadow:0 0 15px rgba(0, 0, 0, .2);
 }
 #pokedex .pokedex-image {
@@ -161,14 +164,16 @@ h2 {
 
 #pokedex p {
     min-height:100px;
-    padding:10px 15px;
-    border-radius:10px;
-    text-align:left;
-    font-size:16px;
-    text-shadow:0 1px 1px rgba(0, 0, 0, .2);
+    padding:13px 15px;
     margin:2px -8px;
-    background-color: rgb(51, 158, 29);
-    border:1px solid rgb(73, 73, 73);
+    font-family:'Courier New';
+    color:rgb(13, 78, 0);
+    font-size:16px;
+    text-align:left;
+    text-shadow:0 1px 1px rgba(0, 0, 0, .3);
+    background-color: rgb(70, 190, 46);
+    border-radius:10px;
+    border:1px solid rgb(95, 95, 95);
     box-shadow:0 0 10px rgba(0, 0, 0, .2) inset;
 }
 
