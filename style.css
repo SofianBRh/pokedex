@@ -119,6 +119,7 @@ h2 {
     border-radius:20px;
     padding:20px;
     color:white;
+    border:8px solid rgb(192, 23, 23);
     box-shadow:0 0 15px rgba(0, 0, 0, .2);
 }
 #pokedex .pokedex-image {
@@ -133,13 +134,16 @@ h2 {
 }
 
 #pokedex h2 {
-    color:white;
+    color:yellow;
     font-size:24px;
-    margin-top:10px;
+    text-align:center;
+    margin-top:7px;
+    text-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
 
 #pokedex p {
     text-align:left;
     font-size:18px;
-    margin-bottom:0;
+    margin:0;
+    margin-top:5px;
 }
