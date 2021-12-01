@@ -25,10 +25,17 @@
 <!-- POKÉDEX -->
 <div id="pokedex">
     <div class="pokedex-image">
-        <img src="" id="pokedex-image-img" alt>
+        <img src="vide.png" id="pokedex-image-img" alt>
+    </div>
+    
+    <div id="pokedex-head">
+        <h2 id="pokedex-nom"></h2>
+        <div>
+            <div id="pokedex-type"></div>
+            <img src="vide.png" id="pokedex-type-image" alt>
+        </div>
     </div>
 
-    <h2 id="pokedex-nom"></h2>
     <p id="pokedex-description"></p>
 </div>
 
@@ -50,12 +57,12 @@
             [7, 'Carapuce', 'eau', 40, "Quand il rentre son cou dans sa carapace, il peut projeter de l'eau à haute pression."],
             [8, 'Carabaffe', 'eau', 80, "Il est considéré comme un symbole de longévité. On reconnaît les spécimens les plus âgés à la mousse qui pousse sur leur carapace."],
             [9, 'Tortank', 'eau', 120, "Il écrase ses adversaires de tout son poids pour leur faire perdre connaissance. Il rentre dans sa carapace s'il se sent en danger."],
-            [10, 'Chenipan', 'Insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
-            [11, 'Chrysacier', 'Insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
-            [12, 'Papilusion', 'Insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
-            [13, 'Aspicot', 'Insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
-            [14, 'Coconfort', 'Insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
-            [15, 'Dartagnan', 'Insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
+            [10, 'Chenipan', 'insecte', 40,"Pour se protéger, il émet par ses antennes une odeur nauséabonde qui fait fuir ses ennemis."],
+            [11, 'Chrysacier', 'insecte', 80, "En attendant sa prochaine évolution, il ne peut que durcir sa carapace et rester immobile pour éviter de se faire attaquer."],
+            [12, 'Papilusion', 'insecte', 120, "En combat, il bat des ailes très rapidement pour projeter de la poudre toxique sur ses ennemis."],
+            [13, 'Aspicot', 'insecte', 40, "L'aiguillon sur son front est très pointu. Il se cache dans les bois et les hautes herbes, où il se gave de feuilles."],
+            [14, 'Coconfort', 'insecte', 80, "Il peut à peine bouger. Quand il est menacé, il sort parfois son aiguillon pour empoisonner ses ennemis."],
+            [15, 'Dartagnan', 'insecte', 120, "Il se sert de ses trois aiguillons empoisonnés situés sur les pattes avant et l'abdomen pour attaquer sans relâche ses adversaires"],
         ];
 
 
@@ -91,7 +98,9 @@
         {
             d.getElementById("pokedex-image-img").src = imagePng(i);
             d.getElementById('pokedex-nom').innerText = pokemon[i][1];
+            d.getElementById('pokedex-type').innerText = txtMajPremier(pokemon[i][2]);
             d.getElementById('pokedex-description').innerText = pokemon[i][4];
+            d.getElementById("pokedex-type-image").src = pokemon[i][2] + '.png';
         }
 
 
@@ -102,6 +111,13 @@
         function imagePng(i)
         {
             return pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
+        }
+
+
+        function txtMajPremier(txt)
+        {
+            txt = txt[0].toUpperCase() + txt.slice(1);
+            return txt;
         }
     </script>
 </div>
