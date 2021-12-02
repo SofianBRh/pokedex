@@ -108,7 +108,7 @@
         {
             d.getElementById("pokedex-image-img").src = imagePng(i);
             d.getElementById('pokedex-nom').innerText = pokemon[i][1];
-            d.getElementById('pokedex-type').innerText = txtMajPremier(pokemon[i][2]);
+            d.getElementById('pokedex-type').innerText = txtMajusculePremier(pokemon[i][2]);
             d.getElementById('pokedex-description').innerText = pokemon[i][4];
             d.getElementById("pokedex-type-image").src = pokemon[i][2] + '.png';
         }
@@ -120,14 +120,12 @@
 
         // Fonction pour écrire le nom du fichier image d'un pokémon
         // Numéro + Nom + .png
-        function imagePng(i)
-        {
+        function imagePng(i) {
             return pokemon[i][0] + pokemon[i][1].toLowerCase() + '.png';
         }
 
 
-        function txtMajPremier(txt)
-        {
+        function txtMajusculePremier(txt) {
             return txt[0].toUpperCase() + txt.slice(1);
         }
     </script>
